@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Gameplay : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Gameplay : MonoBehaviour
 
     private int score;
     private int shotsDone;
+
+    public UnityEvent onAdShow;
 
     private void Start()
     {
@@ -46,6 +49,13 @@ public class Gameplay : MonoBehaviour
         shotsDone += 1;
 
         if (shotsDone % amountOfShotsBeforeAd == 0)
-            GetComponent<AdsManager>().ShowAd();
+            onAdShow.Invoke();
+    }
+
+    public void LoseGame()
+    {
+        if (!LoseTriggerCheck.Instance.isCubeInside) { return; }
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

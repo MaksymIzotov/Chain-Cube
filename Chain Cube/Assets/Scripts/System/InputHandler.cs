@@ -21,7 +21,7 @@ public class InputHandler : MonoBehaviour
 
     private void CallShoot()
     {
-        if (!playerCube.GetChild(0)) { return; }
+        if (playerCube.childCount <= 0) { return; }
 
         Transform cube = playerCube.GetChild(0);
 
