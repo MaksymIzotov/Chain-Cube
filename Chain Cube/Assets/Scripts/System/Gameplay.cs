@@ -56,6 +56,12 @@ public class Gameplay : MonoBehaviour
     {
         if (!LoseTriggerCheck.Instance.isCubeInside) { return; }
 
+        gameState = STATE.MENU;
+        MenuManager.Instance.OpenMenu("restart");
+    }
+
+    public void RestartGame()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
