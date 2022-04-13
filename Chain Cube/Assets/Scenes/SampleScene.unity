@@ -1193,6 +1193,7 @@ GameObject:
   - component: {fileID: 1031539107}
   - component: {fileID: 1031539106}
   - component: {fileID: 1031539108}
+  - component: {fileID: 1031539109}
   m_Layer: 0
   m_Name: Gameplay
   m_TagString: Untagged
@@ -1318,6 +1319,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 788488764}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: OpenMenu
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1479152258}
+          m_ObjectArgumentAssemblyTypeName: Menu, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1031539106}
+        m_TargetAssemblyTypeName: InterstitialAd, Assembly-CSharp
+        m_MethodName: LoadAd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   gameState: 0
   amountOfShotsBeforeAd: 15
   onAdShow:
@@ -1392,6 +1417,18 @@ MonoBehaviour:
   _bannerPosition: 4
   _androidAdUnitId: Banner_Android
   _iOSAdUnitId: Banner_iOS
+--- !u!114 &1031539109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031539099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0505ba96bc1c03d428ab1485144eefd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1041273704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,33 +1512,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 788488764}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: OpenMenu
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1479152258}
-          m_ObjectArgumentAssemblyTypeName: Menu, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1031539104}
         m_TargetAssemblyTypeName: Gameplay, Assembly-CSharp
         m_MethodName: StartGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1031539106}
-        m_TargetAssemblyTypeName: InterstitialAd, Assembly-CSharp
-        m_MethodName: LoadAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

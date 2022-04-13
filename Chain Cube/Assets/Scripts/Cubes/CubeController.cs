@@ -8,12 +8,15 @@ public class CubeController : MonoBehaviour
     public CubePhysics physics;
     public CubeInfo info;
 
+    public bool isCreated;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
 
-        if (transform.parent == null)
-            AddUpwardForce();
+        if (isCreated) { return; }
+
+        AddUpwardForce();
     }
 
     public void Shoot()

@@ -19,8 +19,7 @@ public class BannerAd : MonoBehaviour
         _adUnitId = _androidAdUnitId;
 #endif
 
-        // Set the banner position:
-        Advertisement.Banner.SetPosition(_bannerPosition);
+
     }
 
     // Implement a method to call when the Load Banner button is clicked:
@@ -33,6 +32,8 @@ public class BannerAd : MonoBehaviour
             errorCallback = OnBannerError
         };
 
+        // Set the banner position:
+        Advertisement.Banner.SetPosition(_bannerPosition);
         // Load the Ad Unit with banner content:
         Advertisement.Banner.Load(_adUnitId, options);
     }

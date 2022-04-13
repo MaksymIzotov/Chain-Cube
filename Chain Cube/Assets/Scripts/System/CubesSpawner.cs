@@ -24,7 +24,20 @@ public class CubesSpawner : MonoBehaviour
 
     public void SpawnCube()
     {
-        Instantiate(cubePrefab[Random.Range(0, maxIndex)], spawnPoint);
+        GameObject cube = Instantiate(cubePrefab[Random.Range(0, maxIndex)], spawnPoint);
+        cube.GetComponent<CubeController>().isCreated = true;
+    }
+
+    public void LoadState(List<ItemStoredInfo> items)
+    {
+        foreach(ItemStoredInfo n in items)
+        {
+            Vector3 pos = new Vector3(n.x, n.y, n.z);
+            Quaternion rot = new Quaternion(n.rotX, n.rotY, n.rotZ, n.rotW);
+
+            GameObject cube = Instantiate(cubePrefab[n.id], pos, rot);
+            cube.GetComponent<CubeController>().isCreated = true;
+        }
     }
 
     public void MergeCubes(int score, int index, Transform pos)
@@ -41,6 +54,7 @@ public class CubesSpawner : MonoBehaviour
             if(lastIndex < cubePrefab.Length-1)
                 cube = Instantiate(cubePrefab[lastIndex+1], newPos, Quaternion.identity);
 
+            cube.GetComponent<CubeController>().isCreated = false;
             Gameplay.Instance.AddScore(score*2);
 
             newPos = Vector3.zero;

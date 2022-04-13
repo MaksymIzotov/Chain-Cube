@@ -20,15 +20,37 @@ public class Gameplay : MonoBehaviour
     public STATE gameState;
     public int amountOfShotsBeforeAd = 1;
 
-    private int score;
+    public int score;
     private int shotsDone;
 
     public UnityEvent onAdShow;
 
     private void Start()
     {
-        score = 0;
-        gameState = STATE.MENU;
+        if (!PlayerPrefs.HasKey("IsSaved"))
+        {
+            PlayerPrefs.SetInt("IsSaved", 0);
+            score = 0;
+            gameState = STATE.MENU;
+        }
+        else
+        {
+            int saved = PlayerPrefs.GetInt("IsSaved");
+
+            if (saved == 1)
+            {
+                //Load game
+                SaveLoad.Instance.LoadData();
+                UIHandler.Instance.UpdateScoreText(score);
+                StartGame();
+            }
+            else
+            {
+                score = 0;
+                gameState = STATE.MENU;
+                //TODO: Load High Score
+            }
+        }
     }
 
     public void StartGame()
@@ -58,6 +80,8 @@ public class Gameplay : MonoBehaviour
 
         gameState = STATE.MENU;
         MenuManager.Instance.OpenMenu("restart");
+
+        PlayerPrefs.SetInt("IsSaved", 0);
     }
 
     public void RestartGame()
