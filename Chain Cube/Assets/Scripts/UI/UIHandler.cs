@@ -10,6 +10,9 @@ public class UIHandler : MonoBehaviour
     }
 
     [SerializeField] private TMP_Text score;
+    [SerializeField] private TMP_Text highScore;
 
     public void UpdateScoreText(int _score) => score.text = _score.ToString();
+
+    public void UpdateHighScoreText(int _score) => highScore.text = "High score: " + _score.ToString();
 }

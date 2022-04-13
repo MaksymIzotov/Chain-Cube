@@ -51,6 +51,11 @@ public class Gameplay : MonoBehaviour
                 //TODO: Load High Score
             }
         }
+
+        if(PlayerPrefs.HasKey("HighScore"))
+            UIHandler.Instance.UpdateHighScoreText(PlayerPrefs.GetInt("HighScore"));
+        else
+            UIHandler.Instance.UpdateHighScoreText(0);
     }
 
     public void StartGame()
@@ -77,6 +82,9 @@ public class Gameplay : MonoBehaviour
     public void LoseGame()
     {
         if (!LoseTriggerCheck.Instance.isCubeInside) { return; }
+
+        PlayerPrefs.SetInt("HighScore", score);
+        UIHandler.Instance.UpdateHighScoreText(score);
 
         gameState = STATE.MENU;
         MenuManager.Instance.OpenMenu("restart");
