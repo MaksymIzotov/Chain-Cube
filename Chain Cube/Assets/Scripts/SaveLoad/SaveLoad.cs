@@ -65,19 +65,27 @@ public class SaveLoad : MonoBehaviour
 
 
     #region Handle OnQuit Save
-    private void OnApplicationPause(bool pause)
-    {
-        if (Gameplay.Instance.gameState == Gameplay.STATE.MENU) { return; }
 
-        SaveData();
-    }
+    //private void OnDestroy()
+    //{
+    //    if (Gameplay.Instance.gameState == Gameplay.STATE.MENU) { return; }
 
-    private void OnApplicationQuit()
-    {
-        if (Gameplay.Instance.gameState == Gameplay.STATE.MENU) { return; }
+    //    SaveData();
+    //}
 
-        SaveData();
-    }
+    //private void OnApplicationPause(bool pause)
+    //{
+    //    if (Gameplay.Instance.gameState == Gameplay.STATE.MENU) { return; }
+
+    //    SaveData();
+    //}
+
+    //private void OnApplicationQuit()
+    //{
+    //    if (Gameplay.Instance.gameState == Gameplay.STATE.MENU) { return; }
+
+    //    SaveData();
+    //}
 
     #endregion
 }

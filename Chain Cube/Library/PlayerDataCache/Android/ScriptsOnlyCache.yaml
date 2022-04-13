@@ -1,7 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - AdsManager
+    - AdsInitializer
+    - BannerAd
     - CollisionDetection
     - CubeController
     - CubeInfo
@@ -9,15 +10,15 @@ ScriptsOnlyBuild:
     - CubesSpawner
     - Gameplay
     - InputHandler
+    - InterstitialAd
+    - LoseTriggerCheck
     - Menu
     - MenuManager
+    - SaveLoad
     - Timer
     - UIHandler
-    GoogleMobileAds.Common.dll:
-    - GoogleMobileAds.Common.MobileAdsEventExecutor
-    GoogleMobileAds.Editor.dll:
-    - GoogleMobileAds.Editor.GoogleMobileAdsSettings
-    - GoogleMobileAds.Editor.GoogleMobileAdsSettingsEditor
+    Unity.Mobile.AndroidLogcat.Editor.dll:
+    - Unity.Android.Logcat.AndroidLogcatManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -30,6 +31,9 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.Advertisements.dll:
+    - UnityEngine.Advertisements.Placeholder
+    - UnityEngine.Advertisements.Platform.Editor.BannerPlaceholder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -74,53 +78,59 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1484}
+      Script: {instanceID: 1566}
     - Class: 114
-      Script: {instanceID: 1710}
-    - Class: 114
-      Script: {instanceID: 1982}
+      Script: {instanceID: 1814}
     - Class: 114
       Script: {instanceID: 2122}
     - Class: 114
-      Script: {instanceID: 2178}
+      Script: {instanceID: 2282}
     - Class: 114
-      Script: {instanceID: 2212}
+      Script: {instanceID: 2348}
     - Class: 114
-      Script: {instanceID: 2286}
+      Script: {instanceID: 2382}
     - Class: 114
-      Script: {instanceID: 2398}
+      Script: {instanceID: 2430}
     - Class: 114
-      Script: {instanceID: 2440}
+      Script: {instanceID: 2472}
     - Class: 114
-      Script: {instanceID: 2560}
+      Script: {instanceID: 2596}
     - Class: 114
-      Script: {instanceID: 2744}
+      Script: {instanceID: 2648}
     - Class: 114
-      Script: {instanceID: 2826}
+      Script: {instanceID: 2728}
     - Class: 114
-      Script: {instanceID: 3104}
+      Script: {instanceID: 2784}
     - Class: 114
-      Script: {instanceID: 3220}
+      Script: {instanceID: 2916}
     - Class: 114
-      Script: {instanceID: 3760}
+      Script: {instanceID: 2976}
     - Class: 114
-      Script: {instanceID: 4022}
+      Script: {instanceID: 3070}
     - Class: 114
-      Script: {instanceID: 4164}
+      Script: {instanceID: 3310}
     - Class: 114
-      Script: {instanceID: 15924}
+      Script: {instanceID: 3380}
     - Class: 114
-      Script: {instanceID: 16042}
+      Script: {instanceID: 3476}
     - Class: 114
-      Script: {instanceID: 18488}
+      Script: {instanceID: 3522}
     - Class: 114
-      Script: {instanceID: 18494}
+      Script: {instanceID: 3912}
     - Class: 114
-      Script: {instanceID: 21688}
+      Script: {instanceID: 4038}
     - Class: 114
-      Script: {instanceID: 23518}
+      Script: {instanceID: 4066}
     - Class: 114
-      Script: {instanceID: 27630}
+      Script: {instanceID: 4128}
+    - Class: 114
+      Script: {instanceID: 4418}
+    - Class: 114
+      Script: {instanceID: 4426}
+    - Class: 114
+      Script: {instanceID: 4566}
+    - Class: 114
+      Script: {instanceID: 16628}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -138,6 +148,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -244,7 +256,7 @@ ScriptsOnlyBuild:
     className: InputHandler
   - hash:
       serializedVersion: 2
-      Hash: 02593532ae9488406bf83bf949905927
+      Hash: b770e10ea8f45c10c26269c38c70b1d2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CubeController
@@ -254,6 +266,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CubeInfo
+  - hash:
+      serializedVersion: 2
+      Hash: 1fe1944c83853aceb615156976f31470
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuManager
+  - hash:
+      serializedVersion: 2
+      Hash: a325152ad9563ed900af221c132fea36
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Utilities
+    className: CoroutineExecutor
   - hash:
       serializedVersion: 2
       Hash: a1aa98c78061c6f03a8c124cda576e67
@@ -272,6 +296,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: EventSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Monetization.dll
+    namespaceName: UnityEngine.Monetization
+    className: Placeholder
   - hash:
       serializedVersion: 2
       Hash: fe64a45214940b510a0ec79c96d43498
@@ -296,6 +326,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 1f1b989ac933717e8b617c64cad3c6cc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InterstitialAd
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements
+    className: Placeholder
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -332,6 +374,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: TestResultRendererCallback
+  - hash:
+      serializedVersion: 2
+      Hash: 201c41a671425be80aa298c9b13ba20d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BannerAd
   - hash:
       serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
@@ -394,6 +442,12 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
+      Hash: ba2a3a47b1d15943c27ffeccf8a2e1df
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Gameplay
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -404,6 +458,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Utilities
+    className: ApplicationQuit
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -424,6 +484,18 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
+      Hash: 88e2c6f501bf5dead831a3e44c30de40
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Platform.Editor
+    className: BannerPlaceholder
+  - hash:
+      serializedVersion: 2
+      Hash: 0eed8092d0c18d0c5f0a871491dd2778
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIHandler
+  - hash:
+      serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -442,7 +514,7 @@ ScriptsOnlyBuild:
     className: PlayModeRunnerCallback
   - hash:
       serializedVersion: 2
-      Hash: 2c78508d67df37094377b29be4b72d85
+      Hash: 196bd9d8eada1fe8347078e19fd8ff2e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Timer
@@ -502,6 +574,12 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
+      Hash: fa3db462e972b6f6c37fd0bfb0091566
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoseTriggerCheck
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -524,6 +602,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 6f51c7b3a651b2494223b61cc2e3b6fd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu
+  - hash:
+      serializedVersion: 2
+      Hash: 075b868be727bd5f579fd72d2e2cc3b9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AdsInitializer
   - hash:
       serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
@@ -562,6 +652,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
+      Hash: 6f9094a2543aedac79a041b15aa37fc8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CubePhysics
+  - hash:
+      serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -598,54 +694,11 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: 1238ecde6ffeb65e0cf4a188e38821d4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Gameplay
-  - hash:
-      serializedVersion: 2
-      Hash: f276c5f5c7c9dfae38df9c3aac7badea
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UIHandler
-  - hash:
-      serializedVersion: 2
-      Hash: 6f51c7b3a651b2494223b61cc2e3b6fd
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Menu
-  - hash:
-      serializedVersion: 2
-      Hash: 1fe1944c83853aceb615156976f31470
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MenuManager
-  - hash:
-      serializedVersion: 2
-      Hash: 6f9094a2543aedac79a041b15aa37fc8
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CubePhysics
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: GoogleMobileAds.Common.dll
-    namespaceName: GoogleMobileAds.Common
-    className: MobileAdsEventExecutor
-  - hash:
-      serializedVersion: 2
-      Hash: bc8d0afeebc008570ffede5254e873af
-    assemblyName: GoogleMobileAds.Editor.dll
-    namespaceName: GoogleMobileAds.Editor
-    className: GoogleMobileAdsSettings
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: AdsManager
+    className: SaveLoad
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Max Kayzer/AppData/Roaming/Microsoft/Windows/Network Shortcuts/chain
-    cube.apk
+  playerPath: C:/Users/Max Kayzer/Desktop/chain cube.apk

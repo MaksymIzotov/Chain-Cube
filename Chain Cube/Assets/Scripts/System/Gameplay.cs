@@ -48,7 +48,6 @@ public class Gameplay : MonoBehaviour
             {
                 score = 0;
                 gameState = STATE.MENU;
-                //TODO: Load High Score
             }
         }
 

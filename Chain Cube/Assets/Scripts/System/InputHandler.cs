@@ -23,6 +23,8 @@ public class InputHandler : MonoBehaviour
     {
         if (playerCube.childCount <= 0) { return; }
 
+        SaveLoad.Instance.SaveData();
+
         Transform cube = playerCube.GetChild(0);
 
         cube.parent = null;

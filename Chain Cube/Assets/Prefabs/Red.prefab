@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physics: {fileID: 11400000, guid: 19b9f3111cea5d14c942e284bba4f6c1, type: 2}
   info: {fileID: 11400000, guid: b5016cffe33f22346a3bdb08660ae133, type: 2}
+  isCreated: 0
 --- !u!114 &9133683807907446669
 MonoBehaviour:
   m_ObjectHideFlags: 0

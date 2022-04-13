@@ -29,4 +29,18 @@ public class CubeController : MonoBehaviour
         rb.AddForce(transform.up * physics.upwardsForce, ForceMode.Impulse);
         rb.AddTorque(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)) * physics.upwardsForce / 2, ForceMode.Impulse);
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            gameObject.GetComponent<BoxCollider>().material.staticFriction = 0f;
+            gameObject.GetComponent<BoxCollider>().material.dynamicFriction = 0f;
+        }
+        else
+        {
+            gameObject.GetComponent<BoxCollider>().material.staticFriction = 0.6f;
+            gameObject.GetComponent<BoxCollider>().material.dynamicFriction = 0.6f;
+        }
+    }
 }

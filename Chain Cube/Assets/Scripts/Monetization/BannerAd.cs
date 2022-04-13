@@ -18,8 +18,6 @@ public class BannerAd : MonoBehaviour
 #elif UNITY_ANDROID
         _adUnitId = _androidAdUnitId;
 #endif
-
-
     }
 
     // Implement a method to call when the Load Banner button is clicked:
